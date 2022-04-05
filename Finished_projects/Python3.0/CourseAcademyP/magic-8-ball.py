@@ -3,10 +3,13 @@
 #Write a magic8.py Python program that can answer any “Yes” or “No” question with a different fortune each time it executes.
 
 import random
-name = "Samual"
-question = "Am I oke?"
+name = input()
+question = input()
 answer = ""
 random_number = random.randint(1, 12)
+
+#Else if statments that are chosen when randint chooses a number
+
 if random_number == 1:
   answer = "Yes - definitely."
 elif random_number == 2:
@@ -26,11 +29,14 @@ elif random_number == 8:
 elif random_number == 9:
   answer = "Very doubtful."
 elif random_number == 10:
-  answer = "F*** you"
+  answer = "Screw you"
 elif random_number == 11:
   answer = "You should know"
 elif random_number == 12:
   answer = "Meh, dont fig about it"
+
+#These else/if statements are for errors if user doesn't add there name or a question
+
 else:
   answer += "Error"
 if name == "":
@@ -38,6 +44,6 @@ if name == "":
 else:
   print(name + " asks: " + question)
 if question == "":
-  print("Bruh tf reality is being warped")
+  print("Bruh reality is being warped")
 else:
   print("Magic 8-Ball's answer: " + answer)

@@ -1,8 +1,8 @@
-You’ve recently been hired as a cashier at the local sewing hobby shop, Thread Shed. Some of your daily responsibilities involve tallying the number of sales during the day, calculating the total amount of money made, and keeping track of the names of the customers.
+#You’ve recently been hired as a cashier at the local sewing hobby shop, Thread Shed. Some of your daily responsibilities involve tallying the number of sales during the day, calculating the total amount of money made, and keeping track of the names of the customers.
 
-Unfortunately, the Thread Shed has an extremely outdated register system and stores all of the transaction information in one huge unwieldy string called daily_sales.
+#Unfortunately, the Thread Shed has an extremely outdated register system and stores all of the transaction information in one huge unwieldy string called daily_sales.
 
-All day, for each transaction, the name of the customer, amount spent, types of thread purchased, and the date of sale is all recorded in this same string. Your task is to use your Python skills to iterate through this string and clean up each transaction and store all the information in easier-to-access lists.
+#All day, for each transaction, the name of the customer, amount spent, types of thread purchased, and the date of sale is all recorded in this same string. Your task is to use your Python skills to iterate through this string and clean up each transaction and store all the information in easier-to-access lists.
 
 daily_sales = \
 """Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
@@ -113,6 +113,9 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 
 #------------------------------------------------
 # Start coding below!
+
+#This code will output how much thread was sold today it begins by cleaning random symbols
+
 daily_sales_replaced = daily_sales.replace(';,;', '+')
 daily_transactions = daily_sales_replaced.split(',')
 daily_transactions_split = []
@@ -125,6 +128,8 @@ for transaction in daily_transactions_split:
    
    transaction_clean.append(data_point.replace("\n", "").strip(" "))
   transactions_clean.append(transaction_clean)
+
+#this sorts what was sold and to how many as well as sales
 
 customer = []
 sales = []
@@ -143,6 +148,8 @@ for sale in thread_sold:
   for color in sale.split("&"):
     thread_sold_split.append(color)
 
+#this block below counts the colors bought
+
 def color_count(color):
   color_total = 0 
   for thread_color in thread_sold_split:
@@ -151,6 +158,8 @@ def color_count(color):
   return color_total
 
 colors = ['red','yellow','green','white','black','blue','purple']
+
+#prints statments of amount and color sold today
 
 for color in colors:
   print("Thread shed sold {0} thread of {1} thread today."
